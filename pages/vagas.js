@@ -24,7 +24,7 @@ function Vagas(){
     const [jobs, setJobs] = useState(undefined)
 
     useEffect(async () => {
-        const response = await axios.get("https://api.github.com/repos/jpbrab0/vagas-estagio/issues")
+        const response = await axios.get("https://api.github.com/repos/gatsbyjs/gatsby/issues")
 
         const json = response.data
         if(json != undefined) {
@@ -64,7 +64,6 @@ function Vagas(){
                             key={index}
                         >
                             <h1>{job.title}</h1>
-                            <p>Salário: $$$</p>
                         </JobInfo>
                     ))}
                 </JobsWrapper>
@@ -109,6 +108,7 @@ const JobInfo = styled(motion.a)`
     padding: 13px;
     text-decoration: none;
     color: #000;
+    padding: 23px;
     h1{
         overflow: hidden;
         white-space: nowrap;
