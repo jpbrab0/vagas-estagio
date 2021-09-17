@@ -24,7 +24,7 @@ function Vagas(){
     const [jobs, setJobs] = useState(undefined)
 
     useEffect(async () => {
-        const response = await axios.get("https://api.github.com/repos/gatsbyjs/gatsby/issues")
+        const response = await axios.get("https://api.github.com/repos/jpbrab0/vagas-estagio/issues")
 
         const json = response.data
         if(json != undefined) {
@@ -33,7 +33,7 @@ function Vagas(){
             console.log("deu ruim")
         }
     }, [])
-    if(jobs != undefined) {
+    if(jobs != undefined && jobs != "") {
         return (
             <Center exit={{ opacity: 0 }} initial={{opacity: 0}} animate={{ opacity:1}}>
                 <motion.h1 variants={fadeInDown} initial="initial" animate="animate">Todas as vagas!</motion.h1>
@@ -68,6 +68,13 @@ function Vagas(){
                         </JobInfo>
                     ))}
                 </JobsWrapper>
+            </Center>
+        )
+    } else if(jobs == "") {
+        return (
+            <Center>
+                <h1>Infelizmente ainda não tem nenhuma vaga para exibir aqui :(</h1>
+                <Link href="https://github.com/jpbrab0/vagas-estagio/issues/new/choose" target="_blank">Caso você tenha alguma vaga de estágio para divulgar, clique aqui!</Link>
             </Center>
         )
     }
