@@ -24,7 +24,7 @@ function Vagas(){
     const [jobs, setJobs] = useState(undefined)
 
     useEffect(async () => {
-        const response = await axios.get("https://api.github.com/repos/gatsbyjs/gatsby/issues")
+        const response = await axios.get("https://api.github.com/repos/jpbrab0/vagas-estagio/issues")
 
         const json = response.data
         if(json != undefined) {
