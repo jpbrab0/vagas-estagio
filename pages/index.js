@@ -66,7 +66,7 @@ export default function Home() {
           }>
             <Link href="/vagas">
               <RedirectButton whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                Ver vagas disponiveis!
+                Ver vagas disponíveis!
               </RedirectButton>
             </Link>
           </motion.div>
